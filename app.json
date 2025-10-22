@@ -1,5 +1,13 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsDownloadToken": "sk.eyJ1IjoiaXNhYmVsZG9ubmVyIiwiYSI6ImNtaDIzM3V0ZTA4OGkyaW9iMm50dXE5d3EifQ.YUkdEfzsdfs-31O12t2nbg"
+        }
+      ]
+    ],
     "name": "ecofriend",
     "slug": "ecofriend",
     "version": "1.0.0",
@@ -13,7 +21,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.ecofriend"
     },
     "android": {
       "adaptiveIcon": {
