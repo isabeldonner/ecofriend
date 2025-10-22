@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 
-const token = 'IEB3TDJEQOBY44QQ4TMZ';
+const token = 'P7BKAVOFLVKD7JTOPW';
 const apiUrl = 'https://www.eventbrite.com/oauth/token';
 
 fetch(apiUrl, {
