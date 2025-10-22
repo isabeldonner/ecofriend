@@ -1,5 +1,5 @@
-# ecofriend
-# WiCSE Fall 2025 Design Team
-# An app to promote sustainable practices in users' daily lives!
-# Matilde comment
+dependency installs:
+expo install @react-navigation/native @react-navigation/bottom-tabs
+expo install react-native-screens react-native-safe-area-context
+
 # Jamie comment
