@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 
-const token = 'P7BKAVOFLVKD7JTOPW';
-const apiUrl = 'https://www.eventbrite.com/oauth/token';
+const myToken = 'P7BKAVOFLVKD7JTOPW';
+const apiUrl = 'https://www.eventbrite.com/v3/users/me/?token=myToken';
 
 fetch(apiUrl, {
   headers: {
