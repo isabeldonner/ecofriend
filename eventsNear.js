@@ -1,32 +1,48 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView, Linking, StyleSheet } from 'react-native';
 
-const myToken = 'IEB3TDJEQOBY44QQ4TMZ';
-const apiUrl = 'https://www.eventbriteapi.com/v3/events/search/?token=IEB3TDJEQOBY44QQ4TMZ&categories=111&location.address=gainesville&location.within=20mi';
-
-fetch(apiUrl, {
-  headers: {
-    "Authorization": `Bearer ${myToken}`
-  }
-})
-
-.then(response =>{
-  if (!response.ok) {
-    throw new Error('Network response was not ok ' + response.statusText);
-  }
-  return response.json();
-})
-
-.then(data => 
-  {console.log('User data:', data);
-})
-
-.catch(error => {
-  console.error('Error fetching user data:', error);
-});
+const volunteerEvents = require('./listings-api-sample-volops (2) 2/volops.json').volops;
 
 export default function eventsNear() {
   return (
-    <View><Text>Events</Text></View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.header}>Volunteer Events Near You</Text>
+      {volunteerEvents.map((event, index) => (
+        <View key={event.id || index} style={styles.card}>
+          <Text style={styles.name}>{event.name}</Text>
+          <Text
+            style={styles.link}
+            onPress={() => Linking.openURL(event.url.en)}
+          >
+            View Details
+          </Text>
+        </View>
+      ))}
+    </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+  },
+  header: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 12,
+  },
+  card: {
+    marginBottom: 16,
+    padding: 12,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 8,
+  },
+  name: {
+    fontSize: 18,
+    marginBottom: 6,
+  },
+  link: {
+    color: 'blue',
+    textDecorationLine: 'underline',
+  },
+});
