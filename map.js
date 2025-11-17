@@ -53,7 +53,6 @@ export default function App() {
     <View style={styles.container}>
       <MapView
         style={styles.map}
-        //provider={PROVIDER_GOOGLE} // optional; remove if you want Apple Maps on iOS
         initialRegion={GNV_REGION}
       >
         {stations.map(s => (
