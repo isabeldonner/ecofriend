@@ -8,6 +8,7 @@ export default function eventsNear() {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.header}>Volunteer Events Near You</Text>
       {volunteerEvents.map((event, index) => (
+        event.isPublished &&
         <View key={event.id || index} style={styles.card}>
           <Text style={styles.name}>{event.name}</Text>
           <Text
