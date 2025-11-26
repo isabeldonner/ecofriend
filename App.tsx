@@ -8,6 +8,7 @@ import orgMap from './map';
 import eventsNear from './eventsNear'; 
 import Account from './account'; 
 import { Session } from '@supabase/supabase-js'
+import { HabitTracker } from "./components/HabitTracker";
 //import { Tabs } from 'react-tabs';
 
 // Define types for the Tab and Stack navigators
@@ -36,7 +37,7 @@ function Tabs() {
     <Tab.Navigator>
       <Tab.Screen name="Map" component={orgMap} />
       <Tab.Screen name="Events" component={eventsNear} />
-      <Tab.Screen name="HabitTracker" component={orgMap} />
+      <Tab.Screen name="HabitTracker" component={HabitTracker} />
       <Tab.Screen name="Account" component={Account} />
     </Tab.Navigator>
   );
