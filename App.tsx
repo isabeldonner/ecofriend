@@ -38,7 +38,6 @@ function Tabs() {
       <Tab.Screen name="Map" component={orgMap} />
       <Tab.Screen name="Events" component={eventsNear} />
       <Tab.Screen name="HabitTracker" component={HabitTracker} />
-      <Tab.Screen name="Account" component={Account} />
     </Tab.Navigator>
   );
 }
